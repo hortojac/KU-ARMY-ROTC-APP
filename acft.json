@@ -1,0 +1,61 @@
+{
+    "MDL": [
+        "The MDL assesses the Muscular Strength component of fitness by measuring a Soldier’s lower body, ", 
+        "grip and core muscular strength. It requires well-conditioned back and leg muscles and helps Soldiers to avoid hip, ", 
+        "knee and lower back injuries. Flexibility and balance are secondary components of fitness assessed by the MDL."
+    ],
+    
+    "SPT" : [
+        "The SPT event assesses the Power component of fitness by measuring a Soldier’s ability to generate quick, ",
+        "explosive movements with their upper and lower body. Secondary components of fitness assessed by the SPT include Balance, ",
+        "Coordination and Flexibility."
+    ],
+
+    "HRP" : [
+        "The HRP assesses the Muscular Endurance component of fitness by measuring a Soldier’s upper body endurance. ",
+        "The HRP is a strong driver for upper body and core strength training. Flexibility is a secondary component of fitness assessed by the HRP."
+    ],
+
+    "SDC" : [
+        "The SDC assesses the Muscular Endurance, Muscular Strength, Anaerobic Power and Anaerobic Endurance components of fitness ", 
+        "by measuring a Soldier’s ability to sustain moderate to high intensity muscular work over a short duration. ", 
+        "Secondary components of fitness assessed by the SDC include Balance, Coordination, Agility, Flexibility and Reaction Time."
+    ],
+
+    "PLANK" : [
+        "The PLK assesses the Muscular Endurance component of fitness by measuring a Soldier’s core strength and endurance. ", 
+        "Balance is a secondary component of fitness assessed by the PLK."
+    ],
+
+    "MILE" : [
+        "The 2MR assesses the Aerobic Endurance component of fitness. Higher aerobic endurance allows a Soldier to work for long periods of time ", 
+        "and to recover more quickly when executing repetitive physical tasks."
+    ],
+
+    "ALTERNATE" : [
+        "~5,000-Meter Row~\n",
+        "The 5,000-Meter Row event measures your level of aerobic fitness. On the command, ",
+        "“GO,” the clock will start, and you will begin rowing at your own pace. You may pause ",
+        "and rest during the test; however, you may not get off the rower. You must complete ",
+        "the 5,000-meter distance. You will be scored on your time. To pass, you must complete ",
+        "5,000 meters in the specified 60-point time for your age and gender.\n\n",
+        
+        "~12,000-Meter Bike~\n",
+        "The 12,000-Meter Bike event measures your level of aerobic fitness. On the command, ",
+        "“GO,” the clock will start, and you will begin pedaling at your own pace. You may pause ",
+        "and rest during the test, however you may not get off the bike. You must complete the ",
+        "12,000-meter distance in the specified 60-point time for your age and gender.\n\n",
+
+        "~1,000-Meter Swim~\n",
+        "The 1,000 Meter Swim event measures your level of aerobic fitness. You will begin in ",
+        "the water; no diving is allowed. At the start, your body must be in contact with the wall ",
+        "of the pool. On the command, “GO,” the clock will start. You should then begin ",
+        "swimming at your own pace, using any stroke or combination of strokes you wish. You ",
+        "must swim (state the number) laps to complete this distance. You must touch the wall ",
+        "of the pool at each end of the pool as you turn. Any type of turn is authorized. You must ",
+        "complete the 1,000-meter distance in the specified 60-point time for your age and ",
+        "gender. You will be scored on time. Walking on the bottom to recuperate is authorized. ",
+        "Swimming goggles, swim caps, and civilian swimming attire are permitted, but no other ",
+        "equipment is authorized.\n\n"
+    ]
+}
