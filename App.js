@@ -9,10 +9,10 @@ import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/R
 
 LogBox.ignoreLogs(['Sending...']);
 
-import {ACRONYMS} from "./acronyms.json";
-import {MDL,SPT,HRP,SDC,PLANK,MILE,ALTERNATE} from "./acft.json";
-import {S1,S2,S3,S4,S5,S6,S7,S8,S9} from "./history.json";
-import * as Sections from "./ms1.json";
+import {ACRONYMS} from "./appInfo/acronyms.json";
+import * as aSections from "./appInfo/acft.json";
+import * as hSections from "./appInfo/history.json";
+import * as iSections from "./appInfo/ms1.json";
 
 import Jayhawk from './jayhawk.png';
 
@@ -208,36 +208,67 @@ const StandardScreen = () => {
   );
 }
 
-import ROTCPatch from './assets/RotcPatch.png';
-import CadetRank from './assets/CadetRank.png';
+import ROTCPatch from './assets/ms1/RotcPatch.png';
+import CadetRank from './assets/ms1/CadetRank.png';
 const imageHeightCadetRank = Image.resolveAssetSource(CadetRank).height;
 const imageWidthCadetRank = Image.resolveAssetSource(CadetRank).width;
 const scaleCadetRank = imageWidthCadetRank / windowWidth;
 const finaleCadetRank = imageHeightCadetRank / scaleCadetRank;
-import ArmyRank from './assets/ArmyRank.png';
+import ArmyRank from './assets/ms1/ArmyRank.jpg';
 const imageHeightArmyRank = Image.resolveAssetSource(ArmyRank).height;
 const imageWidthArmyRank = Image.resolveAssetSource(ArmyRank).width;
 const scaleArmyRank = imageWidthArmyRank / windowWidth;
 const finaleArmyRank = imageHeightArmyRank / scaleArmyRank;
+import Uniforms from './assets/ms1/Uniforms.png';
+const imageHeightUniforms = Image.resolveAssetSource(Uniforms).height;
+const imageWidthUniforms = Image.resolveAssetSource(Uniforms).width;
+const scaleUniforms = imageWidthUniforms / windowWidth;
+const finaleUniforms = imageHeightUniforms / scaleUniforms;
+import Units1 from './assets/ms1/Units1.jpg';
+const imageHeightUnits1 = Image.resolveAssetSource(Units1).height;
+const imageWidthUnits1 = Image.resolveAssetSource(Units1).width;
+const scaleUnits1 = imageWidthUnits1 / windowWidth;
+const finaleUnits1 = imageHeightUnits1 / scaleUnits1;
+import Units2 from './assets/ms1/Units2.jpg';
+const imageHeightUnits2 = Image.resolveAssetSource(Units2).height;
+const imageWidthUnits2 = Image.resolveAssetSource(Units2).width;
+const scaleUnits2 = imageWidthUnits2 / windowWidth;
+const finaleUnits2 = imageHeightUnits2 / scaleUnits2;
+import Units3 from './assets/ms1/Units3.jpg';
+const imageHeightUnits3 = Image.resolveAssetSource(Units3).height;
+const imageWidthUnits3 = Image.resolveAssetSource(Units3).width;
+const scaleUnits3 = imageWidthUnits3 / windowWidth;
+const finaleUnits3 = imageHeightUnits3 / scaleUnits3;
 const MS1Screen = () => {
   return (
     <ScrollView style={{ backgroundColor: '#d7d2cb' }}>
       <View style={styles.root}>
         <Text>
-          <Text style={{fontWeight:"bold"}}>{Sections.Section1Title}</Text>{Sections.Section1}
-          <Text style={{fontWeight:"bold"}}>{Sections.Section1NCOTitle}</Text>{Sections.Section1NCO}
-          <Text style={{fontWeight:"bold"}}>{Sections.Section2Title}</Text>{Sections.Section2}
-          <Text style={{fontWeight:"bold"}}>{Sections.Section3Title}</Text>{Sections.Section3}
-          <Text style={{fontWeight:"bold"}}>{Sections.Section4Title}</Text>{Sections.Section4}
-          <Text style={{fontWeight:"bold"}}>{Sections.Section5Title}</Text>{Sections.Section5}
-          <Text style={{fontWeight:"bold"}}>{Sections.Section6Title}</Text><Image source = {ROTCPatch} style = {{marginTop:10, marginBottom:10}} resizeMode="contain"></Image>{Sections.Section6}
-          <Text style={{fontWeight:"bold"}}>{Sections.Section7Title}</Text><Text style={{color: "red"}}>{Sections.Section7}</Text>
-          <Text style={{fontWeight:"bold"}}>{Sections.Section8Title}</Text><Text style={{color: "red"}}>{Sections.Section8}</Text>
-          <Text style={{fontWeight:"bold"}}>{Sections.Section9Title}</Text>
-          <Image source = {CadetRank} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleCadetRank}} resizeMode="contain"></Image>
-          <Text style={{fontWeight:"bold"}}>{Sections.Section10Title}</Text>
-          <Image source = {ArmyRank} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleArmyRank}} resizeMode="contain"></Image>
-          <Text style={{fontWeight:"bold"}}>{Sections.Section16Title}</Text>{Sections.Section16}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section1Title}</Text>{iSections.Section1}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section1NCOTitle}</Text>{iSections.Section1NCO}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section2Title}</Text>{iSections.Section2}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section3Title}</Text>{iSections.Section3}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section4Title}</Text>{iSections.Section4}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section5Title}</Text>{iSections.Section5}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section6Title}</Text><Image source = {ROTCPatch} style = {{marginTop:10, marginBottom:10}} resizeMode="contain"></Image>{iSections.Section6}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section7Title}</Text><Text style={{color: "red"}}>{iSections.Section7}</Text>
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section8Title}</Text><Text style={{color: "red"}}>{iSections.Section8}</Text>
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section9Title}</Text>
+          <Image source = {CadetRank} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleCadetRank}} resizeMode="contain"></Image>{"\n\n"}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section10Title}</Text>
+          <Image source = {ArmyRank} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleArmyRank}} resizeMode="contain"></Image>{"\n\n"}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section11Title}</Text>{iSections.Section11}
+          <Image source = {Uniforms} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleUniforms}} resizeMode="contain"></Image>{"\n\n"}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section12Title}</Text>{iSections.Section12}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section13Title}</Text>{iSections.Section13}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section14Title}</Text>{iSections.Section14P1}<Text style={{textDecorationLine:"underline"}}>{iSections.Section14P2}</Text>{iSections.Section14P3}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section15Title}</Text>{iSections.Section15}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section16Title}</Text>{iSections.Section16}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section17Title}</Text>{iSections.Section17}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section18Title}</Text>
+          <Image source = {Units1} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleUnits1}} resizeMode="contain"></Image>
+          <Image source = {Units2} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleUnits2}} resizeMode="contain"></Image>
+          <Image source = {Units3} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleUnits3}} resizeMode="contain"></Image>{"\n\n"}
         </Text>
       </View>
     </ScrollView>
@@ -251,6 +282,7 @@ const MS2Screen = () => {
     </View>
   );
 }
+
 const MS3Screen = () => {
   return (
     <View style={styles.root}>
@@ -324,7 +356,7 @@ const ACFTScreen = ({ navigation }) => {
 const MDLScreen = () => {
   return (
     <View style={styles.root}>
-      <Text style={styles.textPages}>{MDL}</Text>
+      <Text style={styles.textPages}>{aSections.MDL}</Text>
     </View>
   );
 }
@@ -332,7 +364,7 @@ const MDLScreen = () => {
 const SPTScreen = () => {
   return (
     <View style={styles.root}>
-      <Text style={styles.textPages}>{SPT}</Text>
+      <Text style={styles.textPages}>{aSections.SPT}</Text>
     </View>
   );
 }
@@ -340,7 +372,7 @@ const SPTScreen = () => {
 const HRPScreen = () => {
   return (
     <View style={styles.root}>
-      <Text style={styles.textPages}>{HRP}</Text>
+      <Text style={styles.textPages}>{aSections.HRP}</Text>
     </View>
   );
 }
@@ -348,7 +380,7 @@ const HRPScreen = () => {
 const SDCScreen = () => {
   return (
     <View style={styles.root}>
-      <Text style={styles.textPages}>{SDC}</Text>
+      <Text style={styles.textPages}>{aSections.SDC}</Text>
     </View>
   );
 }
@@ -356,7 +388,7 @@ const SDCScreen = () => {
 const PlankScreen = () => {
   return (
     <View style={styles.root}>
-      <Text style={styles.textPages}>{PLANK}</Text>
+      <Text style={styles.textPages}>{aSections.PLANK}</Text>
     </View>
   );
 }
@@ -364,7 +396,7 @@ const PlankScreen = () => {
 const MileScreen = () => {
   return (
     <View style={styles.root}>
-      <Text style={styles.textPages}>{MILE}</Text>
+      <Text style={styles.textPages}>{aSections.MILE}</Text>
     </View>
   );
 }
@@ -373,7 +405,7 @@ const AlternateScreen = () => {
   return (
     <ScrollView style={{ backgroundColor: '#d7d2cb' }}>
       <View style={styles.root}>
-        <Text style={styles.textPages}>{ALTERNATE}</Text>
+        <Text style={styles.textPages}>{aSections.ALTERNATE}</Text>
       </View>
     </ScrollView>
   );
@@ -426,7 +458,15 @@ const HistoryScreen = () => {
     <ScrollView style={{ backgroundColor: '#d7d2cb' }}>
       <View style={styles.root}>
         <Text style={{...styles.textPages, fontSize: 15}}>
-          {S1}{S2}{S3}{S4}{S5}{S6}{S7}{S8}{S9}
+          {hSections.S1}
+          {hSections.S2}
+          {hSections.S3}
+          {hSections.S4}
+          {hSections.S5}
+          {hSections.S6}
+          {hSections.S7}
+          {hSections.S8}
+          {hSections.S9}
         </Text>
       </View>
     </ScrollView>
