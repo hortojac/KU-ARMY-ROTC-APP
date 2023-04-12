@@ -1,11 +1,13 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import 'react-native-gesture-handler';
-import { SafeAreaView, View, Text, Image, StyleSheet, Pressable, Dimensions, LogBox } from 'react-native';
+import { SafeAreaView, View, Text, Image, StyleSheet, Pressable, Dimensions, LogBox, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ScrollView } from 'react-native-gesture-handler';
+import { Animated } from 'react-native'; // Import the Animated library
 import * as Haptics from 'expo-haptics';
 import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
+import * as FileSystem from 'expo-file-system';
 
 LogBox.ignoreLogs(['Sending...']);
 
@@ -26,6 +28,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#d7d2cb',
     alignItems: 'center',
   },
+  sectionHeader: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    textDecorationLine: 'underline'
+  },
   text: {
     textAlign: 'center',
     fontWeight: 'bold',
@@ -37,8 +44,6 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontWeight: 'normal',
     fontSize: 20,
-    marginTop: 10,
-    marginBottom: 10,
     marginLeft: 10,
     marginRight: 10,
     color: '#333333'
@@ -54,18 +59,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: 230
   },
-  buttonLast: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 0,
-    elevation: 3,
-    backgroundColor: '#0051ba',
-    marginTop: 20,
-    width: 230,
-    marginBottom: 100
-  },
   textButton: {
     textAlign: 'center',
     fontSize: 16,
@@ -76,11 +69,10 @@ const styles = StyleSheet.create({
   }
 });
 
-
 // need to work on logo image where it responds to change in image sizes
 const HomeScreen = ({ navigation }) => {
   return (
-    <ScrollView style={{ backgroundColor: '#d7d2cb' }}>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
       <View style={styles.root}>
         <Image source={Jayhawk} style={{width:windowWidth, height:(windowWidth/1.5)}} resizeMode="contain"></Image>   
         <Text style={styles.text}>Jayhawk Battalion</Text>
@@ -118,7 +110,7 @@ const HomeScreen = ({ navigation }) => {
         <Pressable style={styles.button} onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium) && navigation.navigate('HISTORY')}>
           <Text style={styles.textButton}>History</Text>
         </Pressable>
-        <Pressable style={styles.buttonLast} onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium) && navigation.navigate('ABOUT')}>
+        <Pressable style={[styles.button, {marginBottom:100}]} onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium) && navigation.navigate('ABOUT')}>
           <Text style={styles.textButton}>About Page</Text>
         </Pressable>
       </View>
@@ -182,8 +174,8 @@ const finaleColorGuard = imageHeightColorGuard / scaleColorGuard;
 
 const CalendarScreen = () => {
   return (
-    <ScrollView style={{ backgroundColor: '#d7d2cb' }}>
-      <View style={{...styles.root, marginTop:10, marginBottom:10}}>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
+      <View style={[styles.root, {marginTop:10, marginBottom:10}]}>
         <ReactNativeZoomableView>
           <Image source={MissionVision} style={{width:windowWidth, height:finaleMissionVision}} resizeMode="contain"></Image>
           <Image source={Requirements} style={{width:windowWidth, height:finaleRequirements}} resizeMode="contain"></Image>
@@ -241,35 +233,208 @@ const scaleUnits3 = imageWidthUnits3 / windowWidth;
 const finaleUnits3 = imageHeightUnits3 / scaleUnits3;
 const MS1Screen = () => {
   return (
-    <ScrollView style={{ backgroundColor: '#d7d2cb' }}>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
       <View style={styles.root}>
-        <Text>
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section1Title}</Text>{iSections.Section1}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section1NCOTitle}</Text>{iSections.Section1NCO}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section2Title}</Text>{iSections.Section2}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section3Title}</Text>{iSections.Section3}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section4Title}</Text>{iSections.Section4}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section5Title}</Text>{iSections.Section5}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section6Title}</Text><Image source = {ROTCPatch} style = {{marginTop:10, marginBottom:10}} resizeMode="contain"></Image>{iSections.Section6}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section7Title}</Text><Text style={{color: "red"}}>{iSections.Section7}</Text>
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section8Title}</Text><Text style={{color: "red"}}>{iSections.Section8}</Text>
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section9Title}</Text>
-          <Image source = {CadetRank} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleCadetRank}} resizeMode="contain"></Image>{"\n\n"}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section10Title}</Text>
-          <Image source = {ArmyRank} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleArmyRank}} resizeMode="contain"></Image>{"\n\n"}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section11Title}</Text>{iSections.Section11}
-          <Image source = {Uniforms} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleUniforms}} resizeMode="contain"></Image>{"\n\n"}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section12Title}</Text>{iSections.Section12}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section13Title}</Text>{iSections.Section13}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section14Title}</Text>{iSections.Section14P1}<Text style={{textDecorationLine:"underline"}}>{iSections.Section14P2}</Text>{iSections.Section14P3}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section15Title}</Text>{iSections.Section15}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section16Title}</Text>{iSections.Section16}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section17Title}</Text>{iSections.Section17}
-          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{iSections.Section18Title}</Text>
-          <Image source = {Units1} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleUnits1}} resizeMode="contain"></Image>
-          <Image source = {Units2} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleUnits2}} resizeMode="contain"></Image>
-          <Image source = {Units3} style = {{marginTop:10, marginBottom:10, width:windowWidth, height:finaleUnits3}} resizeMode="contain"></Image>{"\n\n"}
-        </Text>
+        <View>
+          <Text style={[styles.textPages, {textAlign:'center'}]}>
+            <Text style={[styles.sectionHeader, {marginTop:20}]}>
+              {iSections.Section1Title}
+            </Text>
+            <Text>
+              {iSections.Section1}
+            </Text>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section1NCOTitle}
+            </Text>
+            <Text>
+              {iSections.Section1NCO}
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section2Title}
+            </Text>
+            <Text>
+              {iSections.Section2}
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section3Title}
+            </Text>
+            <Text>
+              {iSections.Section3}
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section4Title}
+            </Text>
+            <Text>
+              {iSections.Section4}
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section5Title}
+            </Text>
+            <Text>
+              {iSections.Section5}
+            </Text>
+          </Text>
+        </View>
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section6Title}
+            </Text>
+          </Text>
+          <Text>
+            {"\n"}<Image source={ROTCPatch} resizeMode="contain" />{"\n"}
+          </Text>
+          <Text style={styles.textPages}>
+            {iSections.Section6}
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section7Title}
+            </Text>
+            <Text>
+              {iSections.Section7}
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section8Title}
+            </Text>
+            <Text>
+              {iSections.Section8}
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section9Title}
+            </Text>
+          </Text>
+          <Text>
+            <Image source={CadetRank} style={{marginTop:20, width:windowWidth, height:finaleCadetRank}} resizeMode='contain' />{"\n\n"}
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section10Title}
+            </Text>
+          </Text>
+          <Text>
+            <Image source={ArmyRank} style={{marginTop:20, width:windowWidth, height:finaleArmyRank}} resizeMode='contain' />{"\n\n"}
+          </Text>
+        </View>  
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section11Title}
+            </Text>
+            <Text>
+              {iSections.Section11}
+            </Text>
+          </Text>
+          <Text>
+            <Image source={Uniforms} style={{marginTop:20, width:windowWidth, height:finaleUniforms}} resizeMode='contain' />{"\n\n"}
+          </Text>
+        </View>   
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section12Title}
+            </Text>
+            <Text>
+              {iSections.Section12}
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section13Title}
+            </Text>
+            <Text>
+              {iSections.Section13}
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section14Title}
+            </Text>
+            <Text>
+              {iSections.Section14P1}
+            </Text>
+            <Text style={{textDecorationLine:'underline'}}>
+              {iSections.Section14P2}
+            </Text>
+            <Text>
+              {iSections.Section14P3}
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section15Title}
+            </Text>
+            <Text>
+              {iSections.Section15}
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <Text style={[styles.textPages, {textAlign:'center'}]}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section16Title}
+            </Text>
+            <Text>
+              {iSections.Section16}
+            </Text>  
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section17Title}
+            </Text>
+            <Text>
+              {iSections.Section17}
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <Text style={styles.textPages}>
+            <Text style={styles.sectionHeader}>
+              {iSections.Section18Title}
+            </Text>
+          </Text>
+          <Text>
+            <Image source={Units1} style={{marginTop:20, width:windowWidth, height:finaleUnits1}} resizeMode='contain' />
+            <Image source={Units2} style={{width:windowWidth, height:finaleUnits2}} resizeMode='contain' />
+            <Image source={Units3} style={{marginBottom:20, width:windowWidth, height:finaleUnits3}} resizeMode='contain' />{"\n\n"}
+          </Text>
+        </View>
       </View>
     </ScrollView>
   );
@@ -301,9 +466,26 @@ const MS4Screen = () => {
 
 const AcronymScreen = () => {
   return (
-    <ScrollView style={{ backgroundColor: '#d7d2cb' }}>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
       <View style={styles.root}>
-        <Text style={styles.textPages}>{ACRONYMS}</Text>
+        {ACRONYMS.map((item, index) => {
+          const separatorIndex = item.indexOf(' - ');
+          const acronym = item.substring(0, separatorIndex);
+          const definition = item.substring(separatorIndex + 3, item.length);
+          
+          return (
+            <View key={index} style={{flexDirection: 'row'}}>
+              <Text style={styles.textPages}>
+                <Text style={{fontWeight: 'bold'}}>
+                  {acronym}
+                </Text>
+                <Text>
+                  {" - "}{definition}
+                </Text>
+              </Text>
+            </View>
+          );
+        })}
       </View>
     </ScrollView>
   );
@@ -319,7 +501,7 @@ const PRTScreen = () => {
 
 const ACFTScreen = ({ navigation }) => {
   return (
-    <ScrollView style={{ backgroundColor: '#d7d2cb' }}>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
       <View style={styles.root}>
         <Pressable style={styles.button} onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium) && navigation.navigate('MDL')}>
             <Text style={styles.textButton}>3-Rep Maximum Deadlift</Text>
@@ -355,57 +537,88 @@ const ACFTScreen = ({ navigation }) => {
 
 const MDLScreen = () => {
   return (
-    <View style={styles.root}>
-      <Text style={styles.textPages}>{aSections.MDL}</Text>
-    </View>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
+      <View style={styles.root}>
+        <Text style={styles.textPages}>
+          {aSections.MDL}
+        </Text>
+      </View>
+    </ScrollView>
   );
 }
 
 const SPTScreen = () => {
   return (
-    <View style={styles.root}>
-      <Text style={styles.textPages}>{aSections.SPT}</Text>
-    </View>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
+      <View style={styles.root}>
+        <Text style={styles.textPages}>
+          {aSections.SPT}
+        </Text>
+      </View>
+    </ScrollView>
   );
 }
 
 const HRPScreen = () => {
   return (
-    <View style={styles.root}>
-      <Text style={styles.textPages}>{aSections.HRP}</Text>
-    </View>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
+      <View style={styles.root}>
+        <Text style={styles.textPages}>
+          {aSections.HRP} 
+        </Text>
+      </View>
+    </ScrollView>
   );
 }
 
 const SDCScreen = () => {
   return (
-    <View style={styles.root}>
-      <Text style={styles.textPages}>{aSections.SDC}</Text>
-    </View>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
+      <View style={styles.root}>
+        <Text style={styles.textPages}>
+          {aSections.SDC} 
+        </Text>
+      </View>
+    </ScrollView>
   );
 }
 
 const PlankScreen = () => {
   return (
-    <View style={styles.root}>
-      <Text style={styles.textPages}>{aSections.PLANK}</Text>
-    </View>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
+      <View style={styles.root}>
+        <Text style={styles.textPages}>
+          {aSections.PLANK} 
+        </Text>
+      </View>
+    </ScrollView>
   );
 }
 
 const MileScreen = () => {
   return (
-    <View style={styles.root}>
-      <Text style={styles.textPages}>{aSections.MILE}</Text>
-    </View>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
+      <View style={styles.root}>
+        <Text style={styles.textPages}>
+          {aSections.TWOMILE} 
+        </Text>
+      </View>
+    </ScrollView>
   );
 }
 
 const AlternateScreen = () => {
   return (
-    <ScrollView style={{ backgroundColor: '#d7d2cb' }}>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
       <View style={styles.root}>
-        <Text style={styles.textPages}>{aSections.ALTERNATE}</Text>
+        <Text style={[styles.textPages, {textAlign:"center"}]}>
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{aSections.ALTERNATE1Title}</Text>
+          {aSections.ALTERNATE1}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{aSections.ALTERNATE2Title}</Text>
+          {aSections.ALTERNATE2}
+          <Text style={{fontWeight:"bold", textDecorationLine:"underline"}}>{aSections.ALTERNATE3Title}</Text>
+          {aSections.ALTERNATE3}
+        </Text>
       </View>
     </ScrollView>
   );
@@ -418,7 +631,7 @@ const imageHeight = 2200 / scaleFactor;
 
 const ScoreChartScreen = () => {
   return (
-    <ScrollView style={{ backgroundColor: '#d7d2cb' }}>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
       <View style={styles.root}>
           <Image source={require('./assets/scorechart/ACFTScoreChart01.png')} style={{width:windowWidth, height:imageHeight}} resizeMode="contain"></Image>
           <Image source={require('./assets/scorechart/ACFTScoreChart02.png')} style={{width:windowWidth, height:imageHeight}} resizeMode="contain"></Image> 
@@ -455,9 +668,9 @@ const ExtraScreen = () => {
 
 const HistoryScreen = () => {
   return (
-    <ScrollView style={{ backgroundColor: '#d7d2cb' }}>
+    <ScrollView style={{backgroundColor:'#d7d2cb'}}>
       <View style={styles.root}>
-        <Text style={{...styles.textPages, fontSize: 15}}>
+        <Text style={{...styles.textPages, fontSize:15}}>
           {hSections.S1}
           {hSections.S2}
           {hSections.S3}

@@ -1,52 +1,152 @@
 {
     "MDL": [
-        "The MDL assesses the Muscular Strength component of fitness by measuring a Soldier’s lower body, ", 
-        "grip and core muscular strength. It requires well-conditioned back and leg muscles and helps Soldiers to avoid hip, ", 
-        "knee and lower back injuries. Flexibility and balance are secondary components of fitness assessed by the MDL."
+        "You must step inside the hex bar with feet shoulder width apart and locate the midpoint of the ",
+        "hex bar handles. On the command, \"GET SET,\" you will bend at the knees ",
+        "and hips, reach down, and grasp the center of the handles using a closed grip. Arms ",
+        "will be fully extended, back flat, head in line with the spinal column, and heels in contact ",
+        "with the ground. All repetitions will begin from this position. On the command, \"GO,\" ",
+        "you will stand up and lift the bar by straightening the hips and knees. After completing ",
+        "the movement up, you will lower the bar to the floor under control while maintaining a ",
+        "flat back. You must not rest on the ground. A successful attempt is 3 repetitions to ",
+        "standard. If you fail to perform a successful attempt, you will be allowed one re-attempt ",
+        "at the same weight or a lower weight of your choosing. If you complete 3 correct ",
+        "repetitions on your first attempt, you will be given the option to attempt a higher weight ",
+        "of your choosing to increase your score. The amount of weight successfully attempted ",
+        "will be your raw score.\n",
+        "(Reference: ATP 7-22.01)\n"
     ],
     
     "SPT" : [
-        "The SPT event assesses the Power component of fitness by measuring a Soldier’s ability to generate quick, ",
-        "explosive movements with their upper and lower body. Secondary components of fitness assessed by the SPT include Balance, ",
-        "Coordination and Flexibility."
+        "You will face away from the throw line and grasp a 10-pound medicine ball with both ",
+        "hands. Stand with the heels at (but not on or over) the start line. To avoid having the ",
+        "ball slip, grasp firmly and as far around the sides or beneath the ball as possible. You ",
+        "may make several preparatory movements by bending at the trunk, knees, and hips ",
+        "while lowering the ball toward the ground. Attempt to throw the ball as far as possible. ",
+        "Your feet must be stationary and on the ground prior to the throw. You may jump during ",
+        "the throwing movement to exert more power into the throw, but you must not fall, cross ",
+        "beyond, or touch the throw line with your foot. If you do, the throw will not count. The ",
+        "longer of the two attempts will be the one used for your record score.\n",
+        "(Reference: ATP 7-22.01)\n"
     ],
 
     "HRP" : [
-        "The HRP assesses the Muscular Endurance component of fitness by measuring a Soldier’s upper body endurance. ",
-        "The HRP is a strong driver for upper body and core strength training. Flexibility is a secondary component of fitness assessed by the HRP."
+        "On the command, \"GET SET,\" you will assume the prone position with hands flat on ",
+        "the ground beneath your shoulders. Your chest and the front of your hips and thighs ",
+        "will be on the ground. Toes will be touching the ground and feet will be together or up ",
+        "to a boot's width apart as measured by the grader's boot. Your ankles will be flexed. ",
+        "Your head does not have to be on the ground. With the hands placed flat on the ground, ",
+        "your index fingers will be inside the outer edge of your shoulders. Your feet will remain ",
+        "on the ground throughout the event. On the command, \"GO,\" you will push the whole ",
+        "body up from the ground as a single unit to fully extend the elbows, moving into the ",
+        "front leaning rest position. You will maintain the same straight body alignment from the ",
+        "top of the head to the ankles. This straight position will be maintained for the duration ",
+        "of the event. Bending or flexing the knees, hips, trunk, or neck during a repetition will ",
+        "cause that repetition to not count. In the down position, failing to fully extend the arms ",
+        "into a generally straight position will cause that repetition not to count. The front leaning ",
+        "rest is the only authorized rest position. While at rest, if you move out of the front ",
+        "leaning rest position the event will be terminated. After you reach the up position, your ",
+        "elbows will bend again to lower your body to the ground. Your chest, hips, and thighs ",
+        "will touch the ground. Your head or face does not have to contact the ground, however ",
+        "your eyes will be focused on the ground throughout the Hand-Release Push-Up test ",
+        "event. After reaching the ground as a single unit, without moving the head, body, or ",
+        "legs, you will immediately move both arms out to the side straightening the elbows into ",
+        "the T position. You will then immediately return your hands to the starting position to ",
+        "complete one repetition. You cannot pause or rest on the ground. If you place a knee ",
+        "on the ground or lift a hand or foot when in the up position, the event will be terminated. ",
+        "You have two minutes to complete as many correct repetitions as possible.\n",
+        "(Reference: ATP 7-22.01)\n" 
     ],
 
     "SDC" : [
-        "The SDC assesses the Muscular Endurance, Muscular Strength, Anaerobic Power and Anaerobic Endurance components of fitness ", 
-        "by measuring a Soldier’s ability to sustain moderate to high intensity muscular work over a short duration. ", 
-        "Secondary components of fitness assessed by the SDC include Balance, Coordination, Agility, Flexibility and Reaction Time."
+        "You must assume the prone position with hands on the ground beneath your shoulders ",
+        "and with the top of your head behind the start line, ready to complete 5 consecutive ",
+        "and continuous 50-meter shuttles. For the first shuttle, on the command, \"GO,\" stand ",
+        "up and sprint 25 meters before touching the 25-meter line with your foot and hand, ",
+        "turning at the line and sprinting back to the start. If you fail to touch properly, the grader ",
+        "will call you back before allowing you to continue. For the second shuttle, grasp each ",
+        "pull-strap handle to pull the 90-pound sled backwards until the whole sled crosses the ",
+        "25-meter line. If you fail to cross the line with the sled, the grader will call you back ",
+        "before allowing you to continue. Turn and drag the sled back to the start line. For the ",
+        "third shuttle, you will perform the lateral for 25 meters, touching the line with foot and ",
+        "hand before performing the lateral back to the start line. The lateral will be performed ",
+        "leading with the left foot in one direction and the right foot in the other direction. For ",
+        "the fourth shuttle, grasp the handles of the two 40-pound kettlebells and run 25 meters, ",
+        "touching the line with the foot before returning back to the start line. Place the ",
+        "kettlebells on the ground without dropping them. For the fifth shuttle, sprint 25 meters ",
+        "to the line, touching with the foot and hand before turning and sprinting back to the ",
+        "start line to complete the event.\n",
+        "(Reference: ATP 7-22.01)\n"
     ],
 
     "PLANK" : [
-        "The PLK assesses the Muscular Endurance component of fitness by measuring a Soldier’s core strength and endurance. ", 
-        "Balance is a secondary component of fitness assessed by the PLK."
+        "On the command, \"GET READY,\" your hands must be on the ground, either in fists with ",
+        "pinky side of the hand touching the ground or lying flat with palms down, no more than ",
+        "the grader's fist-width apart; elbows will be bent, aligned with the shoulders, forearms ",
+        "flat on the ground forming a triangle; your fingers may not be interlocked or interlaced. ",
+        "Your hips should be bent with one or both knees resting on the ground. Once all ",
+        "Soldiers are in the ready position, the grader shall issue the command \"GRADERS ",
+        "READY.\" On the command, \"GET SET,\" the Soldier lifts both knees off the ground and ",
+        "moves the hips into a straight line with the legs, shoulders, head and eyes focused on ",
+        "the ground, similar to the \"front leaning rest\" position. Your feet may be up to the ",
+        "grader's boot-width apart. Your elbows should be aligned with your shoulders, together ",
+        "with your forearms forming a triangle. Your ankles should be flexed with the bottom of ",
+        "your toes on the ground. Maintain your body in a straight-line position from your head ",
+        "to your ankles. On the command, \"GO,\" the clock starts. After the command, \"GO,\" the ",
+        "Grader will call out 15 second time intervals until the completion of the ",
+        "event. Your head, shoulders, back, hips, and legs shall be straight from head to heels ",
+        "and must remain so throughout the test. Feet, forearms, and fists/palms shall remain ",
+        "in contact with the floor throughout the event. Failure to maintain your body in a ",
+        "straight-line position will result in the event being terminated. If any part of your body ",
+        "other than your feet, forearms or fists/palms touches the ground, the event will be ",
+        "terminated. If you raise a hand or foot off the floor, the event will be terminated. Graders ",
+        "will give one verbal warning to correct failure to maintain a proper straight-line position ",
+        "or the hands/feet slide from the required position. If the Soldier is not able to correct or ",
+        "fails to maintain the proper straight-line position, the event will be terminated. Shaking ",
+        "or trembling as a result of maximal exertion is permitted as long as the proper plank ",
+        "position is maintained.\n",
+        "(Reference: ATP 7-22.01)\n"
     ],
 
-    "MILE" : [
-        "The 2MR assesses the Aerobic Endurance component of fitness. Higher aerobic endurance allows a Soldier to work for long periods of time ", 
-        "and to recover more quickly when executing repetitive physical tasks."
+    "TWOMILE" : [
+        "Prior to starting the ACFT event, you will already know the 2-mile course including the ",
+        "start and finish points, turn around points, or number of laps. On the command, \"GO,\" ",
+        "the clock will start and you will begin running at your own pace, completing the 2-mile ",
+        "distance without receiving any physical help. You may walk or pause but you cannot ",
+        "be picked up, pulled, or pushed in any way. You may pace another Soldier or be paced ",
+        "by another Soldier. Verbal encouragement is permitted. Leaving the course at any time ",
+        "or at any point during the event will cause the event to be terminated. Your time will be ",
+        "recorded as you cross the finish line at the 2-mile point.\n",
+        "(Reference: ATP 7-22.01)\n"
     ],
 
-    "ALTERNATE" : [
-        "~5,000-Meter Row~\n",
+    "ALTERNATE1Title" : [
+        "5,000-Meter Row\n"
+    ],
+
+    "ALTERNATE1" : [
         "The 5,000-Meter Row event measures your level of aerobic fitness. On the command, ",
         "“GO,” the clock will start, and you will begin rowing at your own pace. You may pause ",
         "and rest during the test; however, you may not get off the rower. You must complete ",
         "the 5,000-meter distance. You will be scored on your time. To pass, you must complete ",
-        "5,000 meters in the specified 60-point time for your age and gender.\n\n",
-        
-        "~12,000-Meter Bike~\n",
+        "5,000 meters in the specified 60-point time for your age and gender.\n\n"
+    ],
+
+    "ALTERNATE2Title" : [
+        "12,000-Meter Bike\n"
+    ],
+
+    "ALTERNATE2" : [
         "The 12,000-Meter Bike event measures your level of aerobic fitness. On the command, ",
         "“GO,” the clock will start, and you will begin pedaling at your own pace. You may pause ",
         "and rest during the test, however you may not get off the bike. You must complete the ",
-        "12,000-meter distance in the specified 60-point time for your age and gender.\n\n",
+        "12,000-meter distance in the specified 60-point time for your age and gender.\n\n"
+    ],
 
-        "~1,000-Meter Swim~\n",
+    "ALTERNATE3Title" : [
+        "1,000-Meter Swim\n"
+    ],
+
+    "ALTERNATE3" : [
         "The 1,000 Meter Swim event measures your level of aerobic fitness. You will begin in ",
         "the water; no diving is allowed. At the start, your body must be in contact with the wall ",
         "of the pool. On the command, “GO,” the clock will start. You should then begin ",
